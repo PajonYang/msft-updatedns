@@ -164,7 +164,7 @@ getDNSAddress()
 
     # Fetch our DNS address from the DNS server
 
-    DNS_ADDRESS=`dig @10.228.124.13 ${HOSTNAME}.scx.com +short`
+    DNS_ADDRESS=`dig @10.128.65.11 ${HOSTNAME}.scx.com +short`
 
     if [ -n "${DNS_ADDRESS}" ]; then
 	logMessage V "TCP/IP address from DNS" "${DNS_ADDRESS}"
@@ -251,7 +251,7 @@ updateIPAddress()
     #
 
     if ! /usr/bin/nsupdate <<EOF; then
-server 10.228.124.13
+server 10.128.65.11
 zone scx.com
 update delete ${HOSTNAME}.scx.com. A
 update add ${HOSTNAME}.scx.com. 300 A ${ACTUAL_IP}
