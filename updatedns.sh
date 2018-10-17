@@ -218,7 +218,7 @@ deleteIPAddress()
     fi
 
     if /usr/bin/nsupdate <<EOF; then
-server 10.228.124.13
+server 10.228.124.11
 zone scx.com
 update delete ${HOSTNAME}.scx.com. A
 send
